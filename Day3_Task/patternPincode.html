@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        var pinPattern = /^[1-9]{1}[0-9]{5}$/;
+        function checkPinPattern(pattern, pincode)
+        {
+            document.write("Checking Pincode : ", pincode)
+            document.write("<br />")
+            if(!pattern.test(pincode))
+            {
+                document.write("Invalid Pincode");
+            }
+            else{
+                document.write("valid Pincode");
+            }
+        }
+        checkPinPattern(pinPattern, 302020);
+        document.write("<br />")
+        checkPinPattern(pinPattern, 'asdasd');
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form</title>
+    <script>
+        function validate(){
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            var password2 = document.getElementById("password2").value;
+            var mobile = document.getElementById("mobilenumber").value;
+
+            //patterns
+            var emailPattern = /^([a-zA-Z0-9_\.\-])+@(([a-zA-Z0-9\-]+\.)([a-zA-Z]){2,4})$/;
+            var mobilePattern = /^[0-9]{10,11}$/;
+            var passwordPattern = /^[a-zA-Z0-9_\-.\@]{6,}$/ ; 
+  
+            if(email == '' || name=='' || password=='' || password2==''|| mobile==''){
+                alert("Enter all the details");
+            }
+            else if(!emailPattern.test(email)){
+                alert("Please Provide a valid email");
+            }
+            else if(!mobilePattern.test(mobile)){
+                alert("Please Provide a valid mobile number");
+            }
+            else if(!passwordPattern.test(password)){
+                alert("Enter Password of atleast 6 characters");
+            }
+            else if(password!=password2){
+                alert("Please Enter Same password")
+            }
+            
+            
+            else{
+                alert("form is submitted successfully");
+            } 
+        }
+    </script>
+</head>
+<body>
+    <h2>Enter Information</h2>
+    <p><input type = "text" placeholder="Enter Name" id="name"/></p>
+    <p><input type = "text" placeholder="Enter Email" id="email"/></p>
+    <p><input type = "text" placeholder="Enter Mobile no." id="mobilenumber"/></p>
+    <p><input type = "text" placeholder="Enter Password" id="password"/></p>
+    <p><input type = "text" placeholder="Confirm Password" id="password2"/></p>
+    
+    <p><button onclick="validate()">Validate</button></p>
+</body>
+</html>

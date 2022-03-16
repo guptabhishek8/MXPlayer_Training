@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        function daysDiff(d1, d2)
+        {
+            document.write("Day1 : ", d1)
+            document.write("<br />")
+            document.write("Day2 : ", d2)
+            document.write("<br />")
+            document.write('Number of days in between : ', (d2.getTime()-d1.getTime())/(1000*24*3600));
+            document.write("<br />")
+        }
+        var d1 = new Date("2023-02-15")
+        var d2 = new Date("2023-03-24")    
+        daysDiff(d1,d2);
+        document.write("<br />")
+
+        var d1 = new Date("2024-02-15")
+        var d2 = new Date("2024-03-24")    
+        daysDiff(d1,d2);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

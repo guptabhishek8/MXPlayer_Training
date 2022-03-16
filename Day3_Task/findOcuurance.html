@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        function findOccurance(str, keyword)
+        {
+
+            var re = new RegExp(keyword, "ig");
+  
+            if(!str.match(re))
+            {
+                document.write("Keyword is not present in the string");
+            }
+            else{
+                var count = (str.match(re)).length ;
+                document.write("String  : ", str)
+                document.write("<br />")
+                document.write("Keyword : ", keyword)
+                document.write("<br />")
+                document.write("No. of occurance of keyword in str : ", count);
+                document.write("<br />")
+            }
+        }
+        findOccurance("Hey my Name is Abhishek", 'My');
+        document.write("<br />")
+        findOccurance("Hey my Name is Abhishek", 'k');
+        document.write("<br />")
+        findOccurance("Hey my Name is Abhishek", 'he');
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
