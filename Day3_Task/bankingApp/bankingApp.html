@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        function openAccount(){
+            var amount = document.getElementById("openingamount").value;
+            document.getElementById("myForm").reset();
+            if (amount == ""){
+                alert("Please Enter Amount to Open the Account")
+            }
+            else if(amount < 5000){
+                alert("Account can opened with atleast 5000 Rs");
+            }
+            else{
+                document.getElementById("balance").innerHTML =amount;
+            }   
+            return false;           
+        }
+        function withdrawAmount(){
+            var withamount = Number(document.getElementById("withdrawingamount").value);
+            var currBalance = Number(document.getElementById("balance").innerHTML);
+            document.getElementById("myForm").reset();
+            if(withamount == ""){
+                alert("Enter Amount to Withdraw");
+            }
+            else if(withamount>currBalance){
+                alert("You do not have this much amount in your account");
+            }
+            else if(isNaN(currBalance)){
+                alert("First you need to Open account")
+            }
+            else{
+                var amount = currBalance - withamount;
+                document.getElementById("balance").innerHTML =amount;
+            }
+        }
+        function depositAmount(){
+            var depoamount = Number(document.getElementById("depositamount").value);
+            var currBalance = Number(document.getElementById("balance").innerHTML);
+            document.getElementById("myForm").reset();
+            if(depoamount == ""){
+                alert("Enter Amount to Deposit");
+            }
+            else if(isNaN(currBalance)){
+                alert("First you need to Open account")
+            }
+            else{
+                var amount  = currBalance + depoamount;
+                document.getElementById("balance").innerHTML =amount;
+                }
+            }
+
+        function closeAccount(){
+            var currBalance = Number(document.getElementById("balance").innerHTML);
+            document.getElementById("myForm").reset();
+            if(currBalance == 0){
+                alert("Closing Bank Account");
+                document.getElementById("balance").innerHTML = "Open Account to Check Balance";
+            }
+            else if(isNaN(currBalance)){
+                alert("First you need to Open account")
+            }
+            else{
+                alert("Withdrawing Amount : "+currBalance +" and Closing Bank Account");
+                document.getElementById("balance").innerHTML = "Open Account to Check Balance";
+                }
+            }
+    </script>
+</head>
+<body>
+    <h2>Banking App</h2>
+    <p>Current Balance : <span id="balance">Open Account to Check Balance</span></p>
+    <form id="myForm">
+        <input type=number placeholder="Enter Amount to open account" id="openingamount">
+        <input type=button onclick=openAccount() value = "Open Account">
+
+        <input type=number placeholder="Enter Amount to withdraw" id="withdrawingamount">
+        <input type=button onclick=withdrawAmount() value = "Withdraw">
+
+        <input type=number placeholder="Enter Amount to deposit" id="depositamount">
+        <input type=button onclick=depositAmount() value = "Deposit">
+
+        <input type=button onclick=closeAccount() value = "Close Account">
+        
+    </form>
+    
+</body>
+
+</html>
