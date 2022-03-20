@@ -20,14 +20,14 @@
             var withamount = Number(document.getElementById("withdrawingamount").value);
             var currBalance = Number(document.getElementById("balance").innerHTML);
             document.getElementById("myForm").reset();
-            if(withamount == ""){
+            if(isNaN(currBalance)){
+                alert("First you need to Open account")
+            }
+            else if(withamount == ""){
                 alert("Enter Amount to Withdraw");
             }
             else if(withamount>currBalance){
                 alert("You do not have this much amount in your account");
-            }
-            else if(isNaN(currBalance)){
-                alert("First you need to Open account")
             }
             else{
                 var amount = currBalance - withamount;
@@ -38,11 +38,11 @@
             var depoamount = Number(document.getElementById("depositamount").value);
             var currBalance = Number(document.getElementById("balance").innerHTML);
             document.getElementById("myForm").reset();
-            if(depoamount == ""){
-                alert("Enter Amount to Deposit");
-            }
-            else if(isNaN(currBalance)){
+            if(isNaN(currBalance)){
                 alert("First you need to Open account")
+            }
+            else if(depoamount == ""){
+                alert("Enter Amount to Deposit");
             }
             else{
                 var amount  = currBalance + depoamount;
@@ -53,12 +53,12 @@
         function closeAccount(){
             var currBalance = Number(document.getElementById("balance").innerHTML);
             document.getElementById("myForm").reset();
-            if(currBalance == 0){
+            if(isNaN(currBalance)){
+                alert("First you need to Open account")
+            }
+            else if(currBalance == 0){
                 alert("Closing Bank Account");
                 document.getElementById("balance").innerHTML = "Open Account to Check Balance";
-            }
-            else if(isNaN(currBalance)){
-                alert("First you need to Open account")
             }
             else{
                 alert("Withdrawing Amount : "+currBalance +" and Closing Bank Account");
