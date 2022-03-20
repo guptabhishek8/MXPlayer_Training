@@ -1,15 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <style>
+        body {
+          background-image: url('https://mdbootstrap.com/img/Photos/Others/images/76.jpg');
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script>
         function openAccount(){
             var amount = document.getElementById("openingamount").value;
+            var currBalance = Number(document.getElementById("balance").innerHTML);
             document.getElementById("myForm").reset();
+            if(!isNaN(currBalance)){
+                alert("You need to close previous account first");
+            }
             if (amount == ""){
-                alert("Please Enter Amount to Open the Account")
+                alert("Please Enter Amount to Open the Account");
             }
             else if(amount < 5000){
-                alert("Account can opened with atleast 5000 Rs");
+                alert("Account can opened with min. 5000 Rs");
             }
             else{
                 document.getElementById("balance").innerHTML =amount;
@@ -68,21 +79,40 @@
     </script>
 </head>
 <body>
-    <h2>Banking App</h2>
-    <p>Current Balance : <span id="balance">Open Account to Check Balance</span></p>
-    <form id="myForm">
-        <input type=number placeholder="Enter Amount to open account" id="openingamount">
-        <input type=button onclick=openAccount() value = "Open Account">
+    
+    <div class="col-lg-12 text-center" style="padding-top:50px">
+        <h2>WELCOME TO XYZ BANK</h2>
+    </div>
+    <div class="col-lg-12 text-center" style="padding-top:70px">
+        <h4>Current Balance : <span id="balance">Open Account to Check Balance</span></h4>
+    </div>
+    
+    <form id="myForm" class="col-lg-12 text-center " style="padding-top:45px">
+        <div class="input-group mb-15 d-flex justify-content-center ">
+            <input type=number class="form-control-sm" placeholder="Opening Balance" id="openingamount">
+            <div class="input-group-append">
+                <input class="btn btn-success" type=button onclick=openAccount() value = "Open Account">
+            </div>
+        </div>
+        <div class="input-group mb-10 d-flex justify-content-center" style="padding-top: 10px;">
+            <input type=number class="form-control-sm" placeholder="Withdraw Amount" id="withdrawingamount">           
+            <div class="input-group-append">
+                <input class="btn btn-success" type=button onclick=withdrawAmount() value = "Withdraw">
+            </div>
+        </div>
+        <div class="input-group mb-10 d-flex justify-content-center" style="padding-top: 10px;">
+            <input type=number class="form-control-sm" placeholder="Deposit Amount" id="depositamount">
+            <div class="input-group-append">
+                <input class="btn btn-success" type=button onclick=depositAmount() value = "Deposit">
+            </div>
+        </div>
+        <div class="input-group mb-10 d-flex justify-content-center" style="padding-top: 90px;">
+            <input class="btn btn-warning" style="padding-top: 10px;" type=button onclick=closeAccount() value = "Close Account">
 
-        <input type=number placeholder="Enter Amount to withdraw" id="withdrawingamount">
-        <input type=button onclick=withdrawAmount() value = "Withdraw">
-
-        <input type=number placeholder="Enter Amount to deposit" id="depositamount">
-        <input type=button onclick=depositAmount() value = "Deposit">
-
-        <input type=button onclick=closeAccount() value = "Close Account">
-        
+        </div>
     </form>
+
+
     
 </body>
 
