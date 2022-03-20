@@ -1,0 +1,13 @@
+"use strict";
+exports.__esModule = true;
+var class_1 = require("./class");
+var savobj = new class_1.saveAccount();
+savobj.openAccount(5000);
+savobj.deposit(10000);
+savobj.withdraw(2000);
+savobj.closeAccount();
+var currobj = new class_1.currAccount();
+currobj.openAccount(4000);
+currobj.deposit(12000);
+currobj.withdraw(3000);
+currobj.closeAccount();
