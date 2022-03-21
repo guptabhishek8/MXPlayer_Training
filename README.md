@@ -21,3 +21,6 @@ Day 4 Questions
 4) Accounts in TypeScipt (Saving and Current)
 5) BankingApp using Interface(Modular Form)
 6) CombinedApp (ValidationForm, PlaceForm, BankingApp) - Homework
+
+Day 5 Questions
+1) EMI calculator
