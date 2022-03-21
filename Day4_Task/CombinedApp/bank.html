@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <script>
+        function openAccount(){
+            var amount = document.getElementById("openingamount").value;
+            var currBalance = Number(document.getElementById("balance").innerHTML);
+            document.getElementById("myForm").reset();
+            if(!isNaN(currBalance)){
+                alert("You need to close previous account first");
+            }
+            if (amount == ""){
+                alert("Please Enter Amount to Open the Account");
+            }
+            else if(amount < 5000){
+                alert("Account can opened with min. 5000 Rs");
+            }
+            else{
+                document.getElementById("balance").innerHTML =amount;
+            }   
+            return false;           
+        }
+        function withdrawAmount(){
+            var withamount = Number(document.getElementById("withdrawingamount").value);
+            var currBalance = Number(document.getElementById("balance").innerHTML);
+            document.getElementById("myForm").reset();
+            if(isNaN(currBalance)){
+                alert("First you need to Open account")
+            }
+            else if(withamount == ""){
+                alert("Enter Amount to Withdraw");
+            }
+            else if(withamount>currBalance){
+                alert("You do not have this much amount in your account");
+            }
+            else{
+                var amount = currBalance - withamount;
+                document.getElementById("balance").innerHTML =amount;
+            }
+        }
+        function depositAmount(){
+            var depoamount = Number(document.getElementById("depositamount").value);
+            var currBalance = Number(document.getElementById("balance").innerHTML);
+            document.getElementById("myForm").reset();
+            if(isNaN(currBalance)){
+                alert("First you need to Open account")
+            }
+            else if(depoamount == ""){
+                alert("Enter Amount to Deposit");
+            }
+            else{
+                var amount  = currBalance + depoamount;
+                document.getElementById("balance").innerHTML =amount;
+                }
+            }
+
+        function closeAccount(){
+            var currBalance = Number(document.getElementById("balance").innerHTML);
+            document.getElementById("myForm").reset();
+            if(isNaN(currBalance)){
+                alert("First you need to Open account")
+            }
+            else if(currBalance == 0){
+                alert("Closing Bank Account");
+                document.getElementById("balance").innerHTML = "Open Account to Check Balance";
+            }
+            else{
+                alert("Withdrawing Amount : "+currBalance +" and Closing Bank Account");
+                document.getElementById("balance").innerHTML = "Open Account to Check Balance";
+                }
+            }
+    </script>
+</head>
+<body>
+    <div class="mdl-layout mdl-js-layout">
+        <header class="mdl-layout__header mdl-layout__header--scroll">
+          <div class="mdl-layout__header-row">
+            <!-- Title -->
+            <span class="mdl-layout-title">MX Player</span>
+            <!-- Add spacer, to align navigation to the right -->
+            <div class="mdl-layout-spacer"></div>
+            <!-- Navigation -->
+            <nav class="mdl-navigation">
+              <a class="mdl-navigation__link" href="bank.html">Banking App</a>
+              <a class="mdl-navigation__link" href="cities.html">Places To Explore</a>
+              <a class="mdl-navigation__link" href="validationform.html">Validation Form</a>
+            </nav>
+          </div>
+        </header>
+        <div class="mdl-layout__drawer">
+          <span class="mdl-layout-title">Links</span>
+          <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" href="bank.html">Banking App</a>
+            <a class="mdl-navigation__link" href="cities.html">Places To Explore</a>
+            <a class="mdl-navigation__link" href="validationform.html">Validation Form</a>
+            </nav>
+        </div>
+        <main class="mdl-layout__content">
+           <div class="page-content">
+            <h2 style="text-align: center; font-family: 'Papyrus',fantasy;">Welcome To XYZ Bank</h2>
+            <p style="text-align: center; font-family: 'Arial', Helvetica, sans-serif;" >Current Balance : <span id="balance">Open Account to Check Balance</span></p>
+            <div class="mdl-grid">
+                <div class="mdl-layout-spacer"></div>
+                <form id="myForm">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <input  class="mdl-textfield__input" type=number id="openingamount">
+                        <label class="mdl-textfield__label" for="openingamount">Enter Amount to open account</label>
+                    </div>
+                    <input  class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type=button onclick=openAccount() value = "Open Account">
+                    <br/>
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <input class="mdl-textfield__input" type=number id="withdrawingamount">
+                        <label class="mdl-textfield__label" for="withdrawingamount">Enter Amount to withdraw</label>
+                    </div>
+                    
+                    <input class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type=button onclick=withdrawAmount() value = "Withdraw">
+                    <br/>
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <input class="mdl-textfield__input" type=number id="depositamount">
+                        <label class="mdl-textfield__label" for="depositamount">Enter Amount to deposit</label>
+                    </div>
+                    
+                    <input class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"  type=button onclick=depositAmount() value = "Deposit">
+                    <br/>
+                    <input class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type=button onclick=closeAccount() value = "Close Account">
+        
+                </form>
+                <div class="mdl-layout-spacer"></div>
+            </div>
+            </div>
+        </main>
+      </div>
+    
+</body>
+
+</html>

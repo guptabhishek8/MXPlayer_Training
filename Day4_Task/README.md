@@ -20,3 +20,20 @@ Questions
 alt = "modularbank"/>
 
 6) CombinedAPP (ValidationForm, Places, BankingApp) - Homework
+
+  BankingApp
+
+  <img src="https://media.discordapp.net/attachments/533295727745564682/955500478161104906/unknown.png?width=1440&height=660" alt="bankingAPP"/>
+
+  Places To Explore
+
+  <img src="https://media.discordapp.net/attachments/533295727745564682/955500543911022723/unknown.png?width=1440&height=663" alt="Places"/>
+
+  Validation Form
+
+  <img src="https://media.discordapp.net/attachments/533295727745564682/955500613880414318/unknown.png?width=1429&height=663" alt="validation"/>
+
+  Side Drawer
+
+  <img src="https://media.discordapp.net/attachments/533295727745564682/955501132225069106/unknown.png?width=1440&height=646" alt="validation"/>
+
