@@ -1,0 +1,99 @@
+<h1>Welcome To Angular App</h1>
+<!--
+<p>sum of {{a}} and {{b}} is {{c}}</p>
+
+<div *ngIf="age >= 18">
+  <strong>you can Vote</strong>
+</div>
+<div *ngIf="age < 18">
+  <strong>you cannot vote</strong>
+</div>
+<h2>{{age}}</h2> 
+<p><input type="text" [(ngModel)]="age" placeholder="Enter Age"/></p>
+-->
+
+<!--
+<h3>The sum of {{a}} and {{b}} is {{c}}</h3>
+<p>
+  <input type="text" [(ngModel)]="a" placeholder="Enter Your First number"/> |  
+  <input type="text" [(ngModel)]="b" placeholder="Enter Your Second number"/>
+  <button (click)="sum()">Sum</button>
+</p>
+-->
+
+<!--
+<h3>Card Eligibility for Salary : {{salary}} : {{elg}}</h3>
+<p>
+  <input type="text" [(ngModel)]="salary" placeholder="Enter Your Salart"/>
+  <button (click)="checkEligible()">Check Eligibility</button>
+</p>
+-->
+
+<!-- For LOOP
+<h3>List Of cities</h3>
+<ul>
+  <li *ngFor="let city of cities">{{city}}</li>
+</ul>
+-->
+
+<!--
+<h3>List Of Fruits</h3>
+<ul>
+  <li *ngFor="let fruit of fruits">{{fruit}}</li>
+</ul>
+-->
+
+<!--
+<table>
+  <tr>
+    <td>Name</td><td>Department</td><td>Salary</td>
+  </tr>
+  <tr *ngFor="let e of employees">
+    <td>{{e.name}}</td><td>{{e.department}}</td><td>{{e.salary}}</td>
+  </tr>
+</table>
+-->
+
+<!--
+<h3>EMI Calculator</h3>
+<p>
+  <input type="text" [(ngModel)]="principal_amount" placeholder="Enter Amount"/>
+  <input type="text" [(ngModel)]="roi" placeholder="Enter ROI"/>
+  <input type="text" [(ngModel)]="tenureY" placeholder="Enter Tenure (Years)"/>
+  <button (click)="checkEMI()">Check Total EMI</button>
+</p>
+<h4>Interest after {{tenureY}} Years : Rs. {{total_interest}} </h4>
+<h4>Total Amount To be paid: Rs. {{total_amount_with_interest}} </h4>
+-->
+
+
+<!-- Change Input without using ngModel and using Event
+<p>{{num1}}</p>
+<p><input type="text" (keyup)="changeVal($event)"/></p>
+-->
+
+<!--
+<h3>Card Eligibility for Salary : {{salary}} : {{elg}}</h3>
+<p>
+  <input type="text" (keyup)="eventSalary($event)" placeholder="Enter Your Salart"/>
+  <button (click)="checkEligible()">Check Eligibility</button>
+</p>
+-->
+<!--
+<app-home  name = "Abhishek"></app-home>
+-->
+<!--
+<app-home  [name] = "childName"></app-home>
+
+
+
+
+<input type="text" [(ngModel)]="fruit" placeholder="Enter fruit Name"/>
+<button (click)="addFruit()">Add Fruits</button>
+
+-->
+<ul>
+  <li *ngFor = "let fr of fruits">{{fr}}</li>
+</ul>
+
+<app-contact (addNewFruit)="addFruit($event)"></app-contact>
