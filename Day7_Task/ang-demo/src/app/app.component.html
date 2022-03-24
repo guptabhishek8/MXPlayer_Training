@@ -1,0 +1,53 @@
+<!--
+
+<h2>My name is {{name | lowercase}}</h2>
+
+<h2>My name is {{name | uppercase}}</h2>
+
+<h4> {{currentDate | date: 'd/M/Y'}}</h4>
+
+<h5>{{290| currency: 'INR'}}</h5>
+
+<table>
+  <tr>
+    <td>Name</td><td>Gender</td>
+  </tr>
+  <tr *ngFor="let user of users">
+    <td>{{user.gender| nameTitle:user.mstatus}}{{user.name}}</td><td>{{user.gender}}</td>
+  </tr>
+</table>
+
+-->
+
+
+<!--
+<table>
+  <tr>
+    <td>Name</td><td>Salary</td><td>Card Status</td>
+  </tr>
+  <tr *ngFor="let user of usersSalary">
+    <td appDemo>{{user.name}}</td><td>{{user.salary}}</td><td>{{user.salary|cardStatus}}</td>
+
+  </tr>
+</table>
+-->
+
+<!--
+<table>
+  <tr><td>Strings</td></tr>
+  <tr *ngFor="let str of arr">
+    <td appStringColor>{{str}}</td>
+  </tr>
+</table>
+-->
+
+<input type="password" placeholder="EnterPassword" appPwdCheck />
+
+
+<!---->
+<div *appStrDir="2000">
+  <p>This text will render after 2 seconds</p>
+</div>
+
+
+

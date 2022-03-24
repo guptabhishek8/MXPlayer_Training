@@ -1,0 +1,48 @@
+<div>
+  <a routerLink="first">First Module</a>
+  <a routerLink="second">Second module</a>
+</div>
+
+<router-outlet></router-outlet>
+
+<form name="form" #frm="ngForm" (ngSubmit)="frm.valid && afterSubmit()">
+  <p>
+    <input type="text" name="name" [(ngModel)]="user.name" #name="ngModel" required minlength="5" pattern="^[a-zA-Z]+$"/>
+  </p>
+  <div *ngIf="name.invalid && (name.untouched || name.touched)">
+    <div *ngIf="name.errors?.['required']">
+      <strong>Name Field is required</strong>
+    </div>
+
+    <div *ngIf="name.errors?.['minlength']">
+      <strong>Name Should have min. 5 characters</strong>
+    </div>
+
+    <div *ngIf="name.errors?.['pattern']">
+      <strong>Name can only be alphabets</strong>
+    </div>
+  </div>
+
+  <p>
+    <input type="text" name="mnumber" [(ngModel)]="user.mnumber" #mnumber="ngModel" required minlength="10" maxlength="11" pattern="^[0-9]+$"/>
+  </p>
+  <div *ngIf="mnumber.invalid && (mnumber.untouched || mnumber.touched)">
+    <div *ngIf="mnumber.errors?.['required']">
+      <strong>Number Field is required</strong>
+    </div>
+
+    <div *ngIf="mnumber.errors?.['minlength']">
+      <strong>No. Should have min. 10 characters</strong>
+    </div>
+
+    <div *ngIf="mnumber.errors?.['pattern']">
+      <strong>Numbers only</strong>
+    </div>
+  </div>
+  <p>
+    <button type="submit" [disabled]="frm.invalid">Submit</button>
+  </p>
+
+
+
+</form>
